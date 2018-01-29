@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MathCalc</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<h1 id="mainHdr">MathCalc</h1>
+<p id="title">string calculator</p>
+<div class="inputVal">
+<input placeholder="Input your expression" id="str" type="text" autofocus="true">
+<button class="calculate" type="button" onclick=ParceValue(document.getElementById('str').value)>=</button>
+</div>
+<div class="inputVal" id="alertBox"></div>
+<p id="info">Result is: <span id="result"></span></p>
+<div id="exmpl">
+    <p id="examples">Examples:</p>
+    <ul>
+        <li>342-23</li>
+        <li>23*242-342</li>
+        <li>23*242-342-(34/2.564)</li>
+    </ul>
+</div>
+</body>
+</html>

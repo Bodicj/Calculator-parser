@@ -1,0 +1,64 @@
+.inputVal{
+    width: 50%;
+    margin: auto;
+    padding: 5px 10px;
+    border: 2px solid rgba(243, 67, 0, 0.4);
+    border-radius: 5px;
+}
+#str{
+    width: 95%;
+    border: none;
+}
+#str:focus{
+    outline: none;
+}
+.calculate{
+    width: 3%;
+    box-sizing: border-box;
+    background: rgba(243, 67, 0, 0.7);
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    padding: 3px;
+    border-radius: 3px;
+}
+#alertBox{
+    background: #ffedbe;
+    color: #ff6f49;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin: 5px auto;
+    visibility: hidden;
+}
+#info{
+    width: 51%;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: #41a2e5;
+}
+#result{
+    color: #000000;
+}
+#title{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+}
+#mainHdr{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 67px;
+    color: rgba(243, 67, 0, 1);
+    margin: 0;
+    margin-top: 250px;
+}
+#exmpl{
+    width: 51%;
+    margin: auto;
+}
+#exmpl ul {
+    font-family: 'Roboto', sans-serif;
+}
+#examples{
+    font-family: 'Roboto', sans-serif;
+}
