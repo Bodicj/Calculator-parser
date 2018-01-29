@@ -8,9 +8,6 @@
             if (osk<0) {fault=1;}
         }
         if (!(osk==0)) {fault=1;}
-        for (i=0;i<line.length;i++) {
-            if ((line.charAt(i)=="("|line.charAt(i)=="+"|line.charAt(i)=="-"|line.charAt(i)=="*"|line.charAt(i)=="/")&&(line.charAt(i+1)==")"|line.charAt(i+1)=="+"|line.charAt(i+1)=="-"|line.charAt(i+1)=="*"|line.charAt(i+1)=="/")) {fault=1;}
-        }
         var reg= new RegExp("\\d|\\.");
         for (i=0;i<line.length;i++){
             if ((line.charAt(i).search(reg)==-1)&&(!(line.charAt(i)=="+"|line.charAt(i)=="-"|line.charAt(i)=="*"|line.charAt(i)=="/"|line.charAt(i)=="("|line.charAt(i)==")"))) {fault=1;}
@@ -51,11 +48,10 @@
      }
  }
  function arithmeticReduction (str) {
-    while(str.search(/(\+\-)|(\-\+)|(\-\-)|(^(\+|\*|\/))/i) >= 0){
-         str = str.replace(/(\+\-)|(\-\+)/, '-');
-         str = str.replace(/(\-\-)/, '+');
-         str = str.replace(/^(\+|\*|\/)/, '');
-     }
+     str = str.replace(/(\+\-)|(\-\+)/g, '-');
+     str = str.replace(/(\-\-)/g, '+');
+     str = str.replace(/^(\+|\*|\/)/g, '');
+     document.getElementById('str').value = str;
      return str
 }
  function arithmeticRefinement (operators, operands) {
@@ -108,7 +104,8 @@
      }
  };
  function ParceValue(str){
-     str = str.replace(/\s/, '');
+     str = str.replace(/\s/g, '');
+     document.getElementById('str').value = str;
      if (Valid(str) == 1){
          document.getElementById('alertBox').style.height = 'auto';
          document.getElementById('alertBox').style.visibility = 'visible'
@@ -132,11 +129,10 @@
         }
     } while (k==1);
     return Calculate(str);
-    $("#str").keydown(function(event){
-        console.log(event.keyCode);
-        if(event.keyCode == 13){
-            event.preventDefault();
-            ParceValue(document.getElementById('str').value);
-        }
-});
 }
+document.onkeyup = function (e) {
+    e = e || window.event;
+    if (e.keyCode === 13) {
+        ParceValue(document.getElementById('str').value);
+    }
+    return false;}
